@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'car-nextjs-api.cheatdev.online',
         pathname: '/uploads/**',
+      },
+        {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/uploads/**',
       }
     ]
   }

@@ -20,7 +20,7 @@ type CreateCarType = {
 
 const sampleCarData: CreateCarType = {
   make: "Toyota",
-  model: "Camry",
+  model: "Camry 002",
   year: 2024,
   price: 35000,
   mileage: 0,
@@ -28,7 +28,7 @@ const sampleCarData: CreateCarType = {
   color: "Silver",
   fuel_type: "gasoline",
   transmission: "automatic",
-  image: "https://car-nextjs-api.cheatdev.online/uploads/82ca35dc-90ac-4991-9daa-3d70f798cae7.png"
+  image: "https://car-nextjs-api.cheatdev.online/uploads/41ff38ec-87ad-4ac1-86e3-f1a7e99c04df.png"
 };
 
 export default function CreateFunction() {
@@ -120,7 +120,7 @@ export default function CreateFunction() {
             throw new Error('No access token found. Please login or refresh your token.');
         }
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_CAR_BASE_URL}/cars`, {
+        const response = await fetch(`https://car-nextjs-api.cheatdev.online/cars`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -146,6 +146,7 @@ export default function CreateFunction() {
     
     // handle submission create the car
     const handleCreateCar = async () => {
+        
         setLoading(true);
         setError('');
         setMessage('');

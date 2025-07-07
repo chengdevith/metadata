@@ -62,7 +62,8 @@ const NavbarComponent = ({
   }, []);
 
   if(pathName === '/login' || 
-    pathName === '/signup'
+    pathName === '/signup' ||
+    pathName === '/dashboard/table'
   ) {
     return null;
   }

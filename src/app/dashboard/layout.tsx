@@ -9,7 +9,8 @@ export default function DashbaordLayout({
     // user,
     create,
     delete_car,
-    update
+    update,
+    table
 }: {
     children: React.ReactNode
     // team: React.ReactNode
@@ -18,6 +19,7 @@ export default function DashbaordLayout({
     create: React.ReactNode
     delete_car: React.ReactNode
     update: React.ReactNode
+    table: React.ReactNode
 }) {
 
     // const isLoggin = false;
@@ -33,12 +35,13 @@ export default function DashbaordLayout({
           <ErrorBoundary errorComponent={Error}>
               {children}
               {/* {team}
-              {user}
-            //   {create} */}
+              {user}*/}
+              {/* {create}  */}
           
             {create}
             {update}
             {delete_car}
+            {table}
           </ErrorBoundary>
         </div>
     )
