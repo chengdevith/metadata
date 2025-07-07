@@ -283,6 +283,7 @@ export function DataTableComponent() {
                   ))}
                 </TableRow>
               ))
+              
             ) : (
               <TableRow>
                 <TableCell
