@@ -11,17 +11,18 @@ import { NavbarComponent } from "@/components/(landing)/nav/NavbarComponent";
 
 
 export const metadata: Metadata = {
-  title: "Car Selling",
-  description: "This is homepage of car selling",
-  keywords:['car','discount','modern','luxeries','expensive'],
-  authors:[{'name':'FullStack Students'}],
-  applicationName:'Car Selling',
+  // title: "Car Selling",
+  // description: "This is homepage of car selling",
+  // keywords:['car','discount','modern','luxeries','expensive'],
+  // authors:[{'name':'FullStack Students'}],
+  // applicationName:'Car Selling',
+
   openGraph:{
     title:'Car Selling',
     description:'This is homepage of car selling',
     images:[
      {
-      url:'https://img.pikbest.com/backgrounds/20211209/car-review-youtube-video-thumbnail-design_6184167.jpg!sw800',
+      url:'https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png',
       width: 800,
       height: 600,
      }
