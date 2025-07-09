@@ -21,7 +21,9 @@ export const metadata: Metadata = {
     description:'This is homepage of car selling',
     images:[
      {
-      url:'../../public/static-photo/black-car.png'
+      url:'https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png',
+      width: 800,
+      height: 600,
      }
     ]
   }
