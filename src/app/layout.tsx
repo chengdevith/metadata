@@ -8,15 +8,16 @@ import React from "react";
 
 import { NavbarComponent } from "@/components/(landing)/nav/NavbarComponent";
 
-
-
 export const metadata: Metadata = {
   // title: "Car Selling",
   // description: "This is homepage of car selling",
   // keywords:['car','discount','modern','luxeries','expensive'],
   // authors:[{'name':'FullStack Students'}],
   // applicationName:'Car Selling',
-
+   title:{
+      template:'%s | Car Selling',
+      default: "HomePage"
+   },
   openGraph:{
     title:'Car Selling',
     description:'This is homepage of car selling',
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
       url:'https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png',
       width: 800,
       height: 600,
+      alt: "Car selling platform",
+      type: 'image/png'
      }
     ]
   }
