@@ -19,10 +19,10 @@ type CreateCarType = {
 }
 
 const sampleCarData: CreateCarType = {
-  make: "Toyota",
+  make: "Toyota 001",
   model: "Camry 002",
   year: 2024,
-  price: 35000,
+  price: 54000,
   mileage: 0,
   description: "Brand new Toyota Camry with excellent features",
   color: "Silver",

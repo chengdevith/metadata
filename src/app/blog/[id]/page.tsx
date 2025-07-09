@@ -1,6 +1,9 @@
 
 import BlogComponent from "@/components/BlogComponent";
 
+
+
+ 
 const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 // fetchData
 async function fetchData(params:number){

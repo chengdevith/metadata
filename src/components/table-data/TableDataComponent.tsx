@@ -37,6 +37,10 @@ import {
 } from "@/components/ui/table"
 import Image from "next/image"
 import FetchCar from "@/lib/api"
+import { CustomFilter } from "./CustomFilter"
+import Link from "next/link"
+// import { useRouter } from "next/router"
+
 
 const data:CarType[] = await FetchCar(0,100);
 
@@ -49,6 +53,11 @@ export type CarType = {
   color:string
   image:string
 }
+// const navigationToCreate = ()=>{
+//   // eslint-disable-next-line react-hooks/rules-of-hooks
+//   const router = useRouter();
+//   router.push('/dashboard/manipulate')
+// }
 
 export const columns: ColumnDef<CarType>[] = [
   {
@@ -78,7 +87,7 @@ export const columns: ColumnDef<CarType>[] = [
     header: "Image"
     ,
     cell: ({ row }) => <div className="lowercase">
-     <Image src={row.getValue("image")} width={50} height={50} alt={row.getValue("model")}/>
+     <Image src={row.getValue("image")} width={50} height={50} alt={row.getValue("make")}/>
     </div>,
   },
   {
@@ -153,7 +162,7 @@ export const columns: ColumnDef<CarType>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original
+      const carId = row.original
 
       return (
         <DropdownMenu>
@@ -166,13 +175,20 @@ export const columns: ColumnDef<CarType>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(carId.id)}
             >
-              Copy payment ID
+              Copy Car ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem 
+            ><Link href={'/dashboard/manipulate?action=create'}>Create Car</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/dashboard/manipulate?action=update&carId=${carId.id}`}>Update Car</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/dashboard/manipulate?action=delete&carId=${carId.id}&make=${carId.make}`}>Delete Car</Link>
+              </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )
@@ -206,11 +222,17 @@ export function DataTableComponent() {
       columnVisibility,
       rowSelection,
     },
+    // initialize pageSize
+    initialState:{
+      pagination:{
+        pageSize: 7
+      }
+    }
   })
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 gap-4">
         <Input
           placeholder="Filter model..."
           value={(table.getColumn("model")?.getFilterValue() as string) ?? ""}
@@ -219,6 +241,24 @@ export function DataTableComponent() {
           }
           className="max-w-sm"
         />
+        {/* filter range at here */}
+        <CustomFilter
+         resetSignal={0} 
+        data={data}
+        fieldKey={"make"}
+        column={table.getColumn("make")}
+        placeholder="Search for make..."
+        title={"Make"}/>
+        
+        <CustomFilter
+         resetSignal={0} 
+        data={data}
+        column={table.getColumn("price")}
+        placeholder="Search for price..."
+        fieldKey={"price"}
+        title={"Price"}/>
+
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -283,7 +323,7 @@ export function DataTableComponent() {
                   ))}
                 </TableRow>
               ))
-              
+
             ) : (
               <TableRow>
                 <TableCell
@@ -299,9 +339,11 @@ export function DataTableComponent() {
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="text-muted-foreground flex-1 text-sm">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+
+          {table.getState().pagination.pageIndex + 1} of{" "}
+          {(table.getFilteredRowModel().rows.length / table.getState().pagination.pageSize).toFixed(0)} page(s) selected.
         </div>
+        
         <div className="space-x-2">
           <Button
             variant="outline"

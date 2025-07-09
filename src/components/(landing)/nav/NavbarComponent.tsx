@@ -63,7 +63,7 @@ const NavbarComponent = ({
 
   if(pathName === '/login' || 
     pathName === '/signup' ||
-    pathName === '/dashboard/table'
+    pathName.startsWith('/dashboard')
   ) {
     return null;
   }
@@ -120,11 +120,9 @@ const NavbarComponent = ({
               {
                 token? (
                   <Link href={"/dashboard"}>Dashboard</Link>
-              
                 ):
                 (
                   //  <Link href={auth.login.url}>{auth.login.title}</Link>
-                  
                   <ProfileComponent />
                  )
               }

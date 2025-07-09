@@ -14,6 +14,7 @@ const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 //     return dataRes;
 // }
 
+
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function BlogPage(){
    

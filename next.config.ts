@@ -12,19 +12,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'avatar.vercel.sh',
-        pathname: '/**',
+        hostname: '**'
       },
-      {
-        protocol: 'https',
-        hostname: 'car-nextjs-api.cheatdev.online',
-        pathname: '/uploads/**',
-      },
-        {
-        protocol: 'http',
-        hostname: 'localhost',
-        pathname: '/uploads/**',
-      }
+   
     ]
   }
 };
