@@ -17,10 +17,38 @@ import { Metadata } from "next";
 //     return dataRes;
 // }
 
-export const metadata:Metadata ={
-    title:"Blog",
-    description:"this is blog page"
-}
+// app/blog/page.tsx
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Latest blog posts about cars in Cambodia.",
+  openGraph: {
+    title: "Blog | Car Selling",
+    description: "Explore car news, stories, and reviews in Cambodia.",
+    url: "https://benz.com/blog",
+    siteName: "Car Selling",
+    images: [
+      {
+        url: "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+        width: 1200,
+        height: 630,
+        alt: "Car Selling Blog Banner",
+        type: "image/png",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Car Selling",
+    description: "Stay updated with car trends in Cambodia.",
+    images: [
+      "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+    ],
+  },
+};
+
 
 
 

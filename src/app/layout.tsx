@@ -9,29 +9,47 @@ import React from "react";
 import { NavbarComponent } from "@/components/(landing)/nav/NavbarComponent";
 
 export const metadata: Metadata = {
-  // title: "Car Selling",
-  // description: "This is homepage of car selling",
-  // keywords:['car','discount','modern','luxeries','expensive'],
-  // authors:[{'name':'FullStack Students'}],
-  // applicationName:'Car Selling',
-   title:{
-      template:'%s | Car Selling',
-      default: "HomePage"
-   },
-  openGraph:{
-    title:'Car Selling',
-    description:'This is homepage of car selling',
-    images:[
-     {
-      url:'https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png',
-      width: 800,
-      height: 600,
-      alt: "Car selling platform",
-      type: 'image/png'
-     }
-    ]
-  }
+  title: {
+    default: "HomePage",
+    template: "%s | Car Selling",
+  },
+  description: "Welcome to Car Selling — Cambodia’s premium vehicle marketplace.",
+  keywords: ["car", "discount", "luxury", "Cambodia", "vehicle", "buy car"],
+  authors: [{ name: "FullStack Students" }],
+  applicationName: "Car Selling",
+
+  openGraph: {
+    title: "Car Selling",
+    description: "This is the homepage of the Car Selling platform.",
+    url: "https://benz.com",
+    siteName: "Car Selling",
+    images: [
+      {
+        url: "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+        width: 800,
+        height: 600,
+        alt: "Car selling platform",
+        type: "image/png",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Car Selling",
+    description: "Buy and sell premium cars easily with Car Selling.",
+    images: [
+      "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+    ],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 
 // kantumruy_font 
