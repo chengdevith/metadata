@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Car Selling",
     images: [
       {
-        url: "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+        url: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
         width: 800,
         height: 600,
         alt: "Car selling platform",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Car Selling",
     description: "Buy and sell premium cars easily with Car Selling.",
     images: [
-      "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+      "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
     ],
   },
 

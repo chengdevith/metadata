@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Car Selling",
     images: [
       {
-        url: "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+        url: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
         width: 1200,
         height: 630,
         alt: "Car Selling Blog Banner",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Blog | Car Selling",
     description: "Stay updated with car trends in Cambodia.",
     images: [
-      "https://car-nextjs-api.cheatdev.online/uploads/370f0d4c-3fad-441a-bd28-31291c30fd38.png",
+      "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
     ],
   },
 };
